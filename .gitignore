@@ -27,3 +27,6 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+## dbeaver ##
+.dbeaver-data-sources
