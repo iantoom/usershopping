@@ -46,7 +46,7 @@ public class ShoppingServiceImpl implements ShoppingService{
 			shoppingReady = new Shopping();
 		}
 		
-		shoppingReady.setCreatedDate(shopping.getCreateddate());
+		shoppingReady.setCreateddate(shopping.getCreateddate());
 		shoppingReady.setName(shopping.getName());
 		
 		return shoppingRepository.save(shoppingReady);

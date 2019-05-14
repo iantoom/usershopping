@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="mysql5-16ab50e7c93-b1eb775d9b71e82" provider="mysql" driver="mysql5" name="MySQL - usershopping" save-password="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="usershopping" url="jdbc:mysql://localhost:3306/usershopping" user="root" password="AwVTdVYTVhJl8w==" home="/usr" type="dev">
+			<property name="connectTimeout" value="20000"/>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>

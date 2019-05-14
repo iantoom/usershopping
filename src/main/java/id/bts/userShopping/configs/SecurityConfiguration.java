@@ -84,16 +84,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeRequests()
-				.antMatchers("/**")
-					.permitAll()
+//				.antMatchers("/**")
+//					.permitAll()
 				.antMatchers("/api/users/signup/")
 					.permitAll()
-				.antMatchers("/v1/login")
+				.antMatchers("/api/users/signin")
+					.permitAll()
+				.antMatchers(HttpMethod.OPTIONS, "/**")
 					.permitAll()
 				.anyRequest()
 					.authenticated()
-				.antMatchers(HttpMethod.OPTIONS, "/**")
-					.permitAll()
 				;
 		
 		http
