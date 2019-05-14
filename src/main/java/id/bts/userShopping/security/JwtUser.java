@@ -11,6 +11,11 @@ import id.bts.userShopping.domains.User;
 
 public class JwtUser implements UserDetails {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5128683038708501119L;
+
 	private final Long id;
 
 	private final String username;

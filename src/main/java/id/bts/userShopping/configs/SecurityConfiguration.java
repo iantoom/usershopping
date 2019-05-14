@@ -70,6 +70,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			// security config stop Blocking H2 Console
 //			.headers()
 //				.frameOptions()
 //					.sameOrigin()
