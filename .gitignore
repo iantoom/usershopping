@@ -29,4 +29,4 @@ HELP.md
 .vscode/
 
 ## dbeaver ##
-.dbeaver-data-sources
+.dbeaver-data-sources.xml
