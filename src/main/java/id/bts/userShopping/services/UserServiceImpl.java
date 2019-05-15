@@ -19,13 +19,8 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-	private final UserRepository userRepository;
-
-	public UserServiceImpl(PasswordEncoder passwordEncoder, UserRepository userRepository) {
-		super();
-		this.passwordEncoder = passwordEncoder;
-		this.userRepository = userRepository;
-	}
+	@Autowired
+	private UserRepository userRepository;
 
 	@Override
 	@Transactional(readOnly = true)

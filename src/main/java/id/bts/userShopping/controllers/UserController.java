@@ -2,6 +2,7 @@ package id.bts.userShopping.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,14 +15,8 @@ import id.bts.userShopping.services.UserService;
 @RestController
 public class UserController {
 	
-	
-	private final UserService userService;
-	
-	public UserController(UserService userService) {
-		super();
-		this.userService = userService;
-	}
-
+	@Autowired
+	private UserService userService;
 
 	@GetMapping("/api/users/")
 	@ResponseStatus(code = HttpStatus.OK)

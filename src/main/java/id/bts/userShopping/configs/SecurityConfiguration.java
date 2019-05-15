@@ -30,17 +30,12 @@ import id.bts.userShopping.security.JwtTokenUtil;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	private final UserDetailsService userDetailsService;
-	private final JwtAuthenticationEntryPoint authenticationEntryPoint;
-	private final JwtTokenUtil jwtTokenUtil;
-
-	public SecurityConfiguration(UserDetailsService userDetailsService,
-			JwtAuthenticationEntryPoint authenticationEntryPoint, JwtTokenUtil jwtTokenUtil) {
-		super();
-		this.userDetailsService = userDetailsService;
-		this.authenticationEntryPoint = authenticationEntryPoint;
-		this.jwtTokenUtil = jwtTokenUtil;
-	}
+	@Autowired
+	private UserDetailsService userDetailsService;
+	@Autowired
+	private JwtAuthenticationEntryPoint authenticationEntryPoint;
+	@Autowired
+	private JwtTokenUtil jwtTokenUtil;
 
 	// Configure root AuthenticationManager
 	@Autowired

@@ -1,5 +1,6 @@
 package id.bts.userShopping.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,14 +20,10 @@ public class SignUpControllers {
 
 	@Value("${jwt.header}")
 	private String tokenHeader;
+	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
+	@Autowired
 	private UserService userservice;
-
-	public SignUpControllers(JwtTokenUtil jwtTokenUtil, UserService userservice) {
-		super();
-		this.jwtTokenUtil = jwtTokenUtil;
-		this.userservice = userservice;
-	}
 
 	@PostMapping("api/users/signup")
 	public ResponseEntity<AuthResponse> signup(@RequestBody User user) {

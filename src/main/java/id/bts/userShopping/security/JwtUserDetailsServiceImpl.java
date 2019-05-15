@@ -1,5 +1,6 @@
 package id.bts.userShopping.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,12 +12,8 @@ import id.bts.userShopping.repositories.UserRepository;
 @Service
 public class JwtUserDetailsServiceImpl implements UserDetailsService{
 
+	@Autowired
 	private UserRepository userRepository;
-
-	public JwtUserDetailsServiceImpl(UserRepository userRepository) {
-		super();
-		this.userRepository = userRepository;
-	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

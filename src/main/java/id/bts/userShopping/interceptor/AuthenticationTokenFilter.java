@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,17 +23,19 @@ import id.bts.userShopping.security.JwtTokenUtil;
 public class AuthenticationTokenFilter extends OncePerRequestFilter {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
+	@Autowired
 	private UserDetailsService userDetailsService;
+	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
-
-	@Value("${jwt.header}")
-	private String tokenHeader;
 
 	public AuthenticationTokenFilter(UserDetailsService userDetailsService, JwtTokenUtil jwtTokenUtil) {
 		super();
 		this.userDetailsService = userDetailsService;
 		this.jwtTokenUtil = jwtTokenUtil;
 	}
+
+	@Value("${jwt.header}")
+	private String tokenHeader;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

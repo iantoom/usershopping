@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -14,12 +15,8 @@ import id.bts.userShopping.repositories.ShoppingRepository;
 @Service
 public class ShoppingServiceImpl implements ShoppingService{
 
+	@Autowired
 	private ShoppingRepository shoppingRepository;
-
-	public ShoppingServiceImpl(ShoppingRepository shoppingRepository) {
-		super();
-		this.shoppingRepository = shoppingRepository;
-	}
 	
 	public Shopping createNewShopping(Shopping shopping) {
 		
